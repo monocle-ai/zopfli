@@ -230,7 +230,7 @@ unsigned getFilterTypes(std::vector<unsigned char>& filterTypes, const std::vect
     filterTypes.swap(passes[0]);
   } else {
     lodepng::State state;
-    unsigned w, h;
+    unsigned w, h = 0;
     lodepng_inspect(&w, &h, &state, &png[0], png.size());
     /*
     Interlaced. Simplify it: put pass 6 and 7 alternating in the one vector so
